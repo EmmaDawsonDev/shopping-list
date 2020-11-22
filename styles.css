@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: aquamarine;
+
+  font-family: "Lato", sans-serif;
+}
+
+.container {
+  text-align: center;
+  max-width: 800px;
+  width: 95%;
+  min-height: 100vh;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 3em;
+}
+
+h1 {
+  font-family: "Anton", sans-serif;
+}
