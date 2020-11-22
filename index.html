@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping List</title>
+    <script
+      src="https://kit.fontawesome.com/4ed2198b96.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Anton&family=Lato&display=swap"
@@ -15,9 +19,19 @@
     <main class="container">
       <h1>Shopping List</h1>
       <div id="shopping-list">
-        <input type="text" placeholder="Item" />
-        <button>Add to list</button>
-        <ul></ul>
+        <input
+          type="text"
+          placeholder="Item to add"
+          v-model="userInput"
+          @keyup.enter="addItemToList"
+        />
+        <button @click="addItemToList">Add to list</button>
+        <ul v-if="listItems.length > 0">
+          <li v-for="(item, index) of listItems" key="item">
+            <p>{{item}}</p>
+            <i @click="removeItem(index)" class="fas fa-trash-alt"></i>
+          </li>
+        </ul>
       </div>
     </main>
     <script src="https://unpkg.com/vue@next"></script>
